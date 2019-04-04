@@ -43,7 +43,7 @@ rows <- sort(c(grep("*mean*",features[,2]),grep("*std*",features[,2])))
 cols <- rows+1 ## compensate for added column of Participant Number
 filtereddata <- data[,c(1,cols,563)] ## Extract only means and std for Goal 2.
 
-wanted <- features[cols,] ## extract descriptive column activity names
+wanted <- features[rows,] ## extract descriptive column activity names
 name <- wanted[,2] ## assign descriptive names to variable for Goal 3.
 names <- as.character(name) ## reclassify names as factor into characters
 colnames(filtereddata)[c(2:(length(colnames(filtereddata))-1))] <- names
